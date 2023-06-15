@@ -12,8 +12,10 @@ jobs:
           node-version: 18
       - name: Install Packages
         run: npm ci
-      - name: Run lint
-        run: npm run lint
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
   test:
     needs: lint
     runs-on: ubuntu-latest
